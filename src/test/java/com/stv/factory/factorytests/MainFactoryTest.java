@@ -2,8 +2,6 @@ package com.stv.factory.factorytests;
 
 
 import com.stv.factory.factorypages.MainFactoryPage;
-import com.stv.framework.core.drivers.MyDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
