@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MainFactoryPage extends FactoryPage {
-
     @FindBy(css = "img.admin")
     private WebElement adminLogo;
 
@@ -48,13 +47,12 @@ public class MainFactoryPage extends FactoryPage {
         return textAdministrations;
     }
 
-
     public void clickOnAdminLogo() {
         adminLogo.click();
     }
 
-    public boolean isMainLogoDisplayed() {
-        return parabankLogo.isDisplayed();
+    public void clickOnLoginButton() {
+        loginButton.click();
     }
 
     public void enterUsername(String username) {
@@ -65,12 +63,12 @@ public class MainFactoryPage extends FactoryPage {
         fieldPassword.sendKeys(password);
     }
 
-    public void clickOnLoginButton() {
-        loginButton.click();
-    }
-
     public boolean isErrorMessageDisplayed() {
         return ErrorMessageText.isDisplayed();
+    }
+
+    public boolean isMainLogoDisplayed() {
+        return parabankLogo.isDisplayed();
     }
 
     public void clickOnlinkServices() {
