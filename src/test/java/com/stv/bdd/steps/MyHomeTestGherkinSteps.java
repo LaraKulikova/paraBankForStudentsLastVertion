@@ -8,11 +8,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import java.time.Duration;
-
 import static com.stv.framework.core.lib.ParaBankPageURLs.START_URL;
-
 
 public class MyHomeTestGherkinSteps extends BasicFactoryTest {
     MainFactoryPage mainFactoryPage = new MainFactoryPage();
@@ -35,8 +32,19 @@ public class MyHomeTestGherkinSteps extends BasicFactoryTest {
         mainFactoryPage.enterPassword(password);
     }
 
+    @When("the user enter wrong in the {string}")
+    public void theUserEnterWrongInThe(String username) {
+        mainFactoryPage.enterUsername(username);
+    }
+
     @And("presses the Login button")
     public void pressesTheLoginButton() {
+        mainFactoryPage.clickOnLoginButton();
+    }
+
+    @And("{string} fields")
+    public void fields(String password) {
+        mainFactoryPage.enterPassword(password);
         mainFactoryPage.clickOnLoginButton();
     }
 
@@ -44,17 +52,6 @@ public class MyHomeTestGherkinSteps extends BasicFactoryTest {
     public void theUserReceivesTheErrorMessage() {
         Assert.assertTrue(mainFactoryPage.isErrorMessageDisplayed(),
                 "Error! Please enter a username and password.");
-    }
-
-    @When("the user enter wrong in the {string}")
-    public void theUserEnterWrongInThe(String username) {
-        mainFactoryPage.enterUsername(username);
-    }
-
-    @And("{string} fields")
-    public void fields(String password) {
-        mainFactoryPage.enterPassword(password);
-        mainFactoryPage.clickOnLoginButton();
     }
 
     @Then("the result should be Error")
