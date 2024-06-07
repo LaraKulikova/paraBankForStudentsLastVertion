@@ -76,7 +76,7 @@ public class MyFinallyTestSteps extends BasicFactoryTest {
     }
 
     @Then("^Scroll to the top of the page$")
-    public void iScrollToTheTopOfThePage() throws InterruptedException {
+    public void iScrollToTheTopOfThePage() {
         mainFactoryTest.scrollBackToTop();
         System.out.println("Step3. I scroll to Top");
 

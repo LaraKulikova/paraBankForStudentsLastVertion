@@ -13,9 +13,6 @@ public class MainFactoryPage extends FactoryPage {
     @FindBy(css = "img[alt='ParaBank']")
     private WebElement parabankLogo;
 
-    @FindBy(xpath = "//h1[contains(text(),'Administration')]")
-    private WebElement adminRightPanel;
-
     @FindBy(xpath = "//input[contains(@name, 'username')]")
     private WebElement filedUsername;
 
