@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeClass;
 
 import java.time.Duration;
 
-//import static com.stv.framework.core.lib.ParaBankPageURLs.SERVICE_URL;
 import static com.stv.framework.core.lib.ParaBankPageURLs.START_URL;
 
 public class BasicFactoryTest {
@@ -22,7 +21,8 @@ public class BasicFactoryTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
     }
-//    @BeforeClass(description = "Open service page")
+
+    //    @BeforeClass(description = "Open service page")
 //    public void openService() {
 //        WebDriver driver = getDriver();
 //        driver.get(SERVICE_URL);
@@ -31,6 +31,6 @@ public class BasicFactoryTest {
 //    }
     @AfterClass
     public void afterClass() throws Exception {
-      //  getDriver().quit();
+        //  getDriver().quit();
     }
 }

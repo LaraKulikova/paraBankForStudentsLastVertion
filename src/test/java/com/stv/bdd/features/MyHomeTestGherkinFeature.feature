@@ -8,19 +8,16 @@ Feature: MyHomeTestGherkin
     Then the user receives the error message
 
 
-
-
-
   Scenario Outline: Enter on the LogoPage username & password
     Given the user has opened the login page
     When the user enter wrong in the "<username>"
     And "<password>" fields
     Then the result should be Error
     Examples:
-      | username | password |
-    |    Lara      |   12345       |
-    |    00000     |   1234       |
-    |    Petia     |   00000000000       |
+      | username | password    |
+      | Lara     | 12345       |
+      | 00000    | 1234        |
+      | Petia    | 00000000000 |
 
 
 

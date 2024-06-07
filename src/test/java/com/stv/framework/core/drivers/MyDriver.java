@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import static com.stv.framework.core.lib.ParaBankPageURLs.START_URL;
+
 public class MyDriver {
     private static WebDriver driver;
 
@@ -32,4 +34,5 @@ public class MyDriver {
 //        System.setProperty("webdriver.gecko.driver", exePath);
         driver = new FirefoxDriver();
     }
+
 }

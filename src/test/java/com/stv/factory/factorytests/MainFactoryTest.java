@@ -3,15 +3,11 @@ package com.stv.factory.factorytests;
 
 import com.stv.factory.factorypages.MainFactoryPage;
 import com.stv.framework.core.drivers.MyDriver;
-
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-
-
-
 
 import static com.stv.framework.core.utils.Waiters.waitForElementVisible;
 
@@ -48,7 +44,6 @@ public class MainFactoryTest extends BasicFactoryTest {
         Assert.assertTrue(mainFactoryPage.isErrorMessageDisplayed(), "Error! The username and password could not be verified.");
     }
 
-
     @Test(description = "Follow the Services link and make sure " +
             "that on the open page there is " +
             "'Available Bookstore SOAP services:'")
@@ -70,14 +65,11 @@ public class MainFactoryTest extends BasicFactoryTest {
         Assert.assertTrue(mainFactoryPage.isElementScrolledTo(mainFactoryPage.getTextBookstoreServices()), "Bookstore services:");
     }
 
-
-
     @Test(description = "Scroll the page to the " +
             "Available ParaBank SOAP services element" +
             "and turn back to the head of this page",
             dependsOnMethods = "scrollOnElement")
     public void scrollBackToTop() {
-
         mainFactoryPage.scrollBackToTop();
     }
 

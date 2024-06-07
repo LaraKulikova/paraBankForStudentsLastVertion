@@ -2,7 +2,6 @@ package com.stv.bdd.steps;
 
 import com.stv.factory.factorypages.MainFactoryPage;
 import com.stv.factory.factorytests.BasicFactoryTest;
-import io.cucumber.java.be.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,9 +9,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-
 import java.time.Duration;
-
 
 import static com.stv.framework.core.lib.ParaBankPageURLs.START_URL;
 
@@ -49,18 +46,19 @@ public class MyHomeTestGherkinSteps extends BasicFactoryTest {
 
     @Then("the user receives the error message")
     public void theUserReceivesTheErrorMessage() {
-        Assert.assertTrue(mainFactoryPage.isErrorMessageDisplayed(),"Error! Please enter a username and password.");
+        Assert.assertTrue(mainFactoryPage.isErrorMessageDisplayed(),
+                "Error! Please enter a username and password.");
     }
 
 
     @When("the user enter wrong in the {string}")
-    public void theUserEnterWrongInThe(String username) throws InterruptedException {
+    public void theUserEnterWrongInThe(String username){
         mainFactoryPage.enterUsername(username);
 
     }
 
     @And("{string} fields")
-    public void fields(String password) throws InterruptedException{
+    public void fields(String password){
     mainFactoryPage.enterPassword(password);
     mainFactoryPage.clickOnLoginButton();
 
@@ -68,6 +66,7 @@ public class MyHomeTestGherkinSteps extends BasicFactoryTest {
 
     @Then("the result should be Error")
     public void theResultShouldBeError() {
-        Assert.assertTrue(mainFactoryPage.isErrorMessageDisplayed(),"Error! Please enter a username and password.");
+        Assert.assertTrue(mainFactoryPage.isErrorMessageDisplayed(),
+                "Error! Please enter a username and password.");
     }
 }
