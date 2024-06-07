@@ -14,17 +14,16 @@ import java.time.Duration;
 import static com.stv.framework.core.lib.ParaBankPageURLs.START_URL;
 
 
-
 public class MyHomeTestGherkinSteps extends BasicFactoryTest {
     MainFactoryPage mainFactoryPage = new MainFactoryPage();
     WebDriver driver = getDriver();
+
     @Given("the user has opened the login page")
     public void theUserHasOpenedTheLoginPage() {
         driver.get(START_URL);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
         System.out.println("the user has opened the login page- ready");
-
     }
 
     @When("the user does not enter data in the username and password fields")
@@ -34,13 +33,11 @@ public class MyHomeTestGherkinSteps extends BasicFactoryTest {
         mainFactoryPage.clickOnAdminLogo();
         mainFactoryPage.enterUsername(username);
         mainFactoryPage.enterPassword(password);
-
     }
 
     @And("presses the Login button")
     public void pressesTheLoginButton() {
         mainFactoryPage.clickOnLoginButton();
-
     }
 
     @Then("the user receives the error message")
@@ -49,18 +46,15 @@ public class MyHomeTestGherkinSteps extends BasicFactoryTest {
                 "Error! Please enter a username and password.");
     }
 
-
     @When("the user enter wrong in the {string}")
-    public void theUserEnterWrongInThe(String username){
+    public void theUserEnterWrongInThe(String username) {
         mainFactoryPage.enterUsername(username);
-
     }
 
     @And("{string} fields")
-    public void fields(String password){
-    mainFactoryPage.enterPassword(password);
-    mainFactoryPage.clickOnLoginButton();
-
+    public void fields(String password) {
+        mainFactoryPage.enterPassword(password);
+        mainFactoryPage.clickOnLoginButton();
     }
 
     @Then("the result should be Error")
