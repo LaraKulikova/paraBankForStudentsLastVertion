@@ -29,7 +29,6 @@ public class MyHomeTestGherkinSteps extends BasicFactoryTest {
 
     @When("the user does not enter data in the username and password fields")
     public void theUserDoesNotEnterDataInTheUsernameAndPasswordFields() {
-
         String username = "";
         String password = "";
         mainFactoryPage.clickOnAdminLogo();
