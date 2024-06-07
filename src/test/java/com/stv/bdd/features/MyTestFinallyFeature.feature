@@ -1,6 +1,6 @@
 Feature: MyFinallyTest
 
-  Scenario: 01 Click Servises Link and Find Available Bookstore SOAP services
+  Scenario: 01 Click Servises Link. Find Available Bookstore SOAP services
     Given I open main page
     When I click on the Services
     Then open the page with text Available Bookstore SOAP services
